@@ -28,7 +28,7 @@ const CalendarYear = (props) => {
     >
       <Grid className="months" templateColumns="repeat(4, 1fr)" gap="1em">
         {months.map((month, x) => (
-          <a href={`/calendar/tasks?date=${month}`}>
+          <a key={month} href={`/calendar/tasks?date=${month}`}>
             <Box
               key={x}
               className="date"

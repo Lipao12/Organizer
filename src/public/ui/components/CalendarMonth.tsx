@@ -45,10 +45,11 @@ const CalendarMonth = (props) => {
                 .toString()
                 .padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
 
+              const key = `${props.month}-${x}-${y}`;
               // Verifica se o dia não está vazio antes de renderizar o link
               if (day !== "") {
                 return (
-                  <a key={day} href={`/calendar/tasks?date=${selectedDate}`}>
+                  <a key={key} href={`/calendar/tasks?date=${selectedDate}`}>
                     <Box
                       className="date"
                       data-date={day}
@@ -68,7 +69,7 @@ const CalendarMonth = (props) => {
                 // Renderiza apenas a caixa se o dia estiver vazio
                 return (
                   <Box
-                    key={day}
+                    key={key}
                     className="date"
                     data-date={day}
                     h="14vh"
